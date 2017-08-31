@@ -1,0 +1,36 @@
+	html{font-size: 62.5%;}
+body{
+	color: white;
+	background-color: rgb(104,205,213);
+	font-size:1.3rem;
+}
+.arrow{
+	display: inline-block;
+	margin-bottom: 6rem;
+}
+.title{
+	float: left;
+	position: relative;
+	left: 50%;
+}
+.logo{
+	position: relative;
+	left: -50%;
+}
+.intro{
+	text-align: left;
+	margin:12rem 15% 12rem;
+}
+.bottom>div{
+	display: inline-block;
+}
+.icon1{
+	margin-left: 15%;
+	text-align: center;
+}
+.icon2{
+	float: right;
+	margin-right: 15%;
+	text-align: center;
+}
+p{text-align: left;}
