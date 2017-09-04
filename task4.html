@@ -114,21 +114,25 @@ button{
 	margin-right: 3vw;
 	text-decoration: underline;
 }
+a.use:link{text-decoration: none;color:white;}
+a.use:visited{text-decoration: none;color:white;}
+a.forget:link{text-decoration: none;color:rgb(95,192,205);}
+a.forget:visited{text-decoration: none;color:rgb(95,192,205);}
 	</style>
 </head>
 <body>
 	<div class="header">
-	<p class="hdtext1">注册</p>
+	<p class="hdtext1"><a href="" class="use">注册</a></p>
 	<p class="hdtext2">登陆</p>
-	<p class="hdtext3">关闭</p>
+	<p class="hdtext3"><a href="" class="use">关闭</a></p>
 	</div>
 	<div class="midForm">
 	<form>
 	<div class="into"><div class="iphone"></div><div class="icon-line"></div><input type="text" name="Number" placeholder="请输入手机号"></div>
 	<div class="into"><div class="lock"></div><div class="icon-line"></div><input type="password" name="Password" placeholder="请输入密码"></div>
-	<div class="upload"><button type="submit" name="Submit" value="Submit">登&nbsp;&nbsp;&nbsp;&nbsp;陆</button></div>
+	<div class="upload"><button type="submit" name="Submit" value="Submit">登&nbsp&nbsp&nbsp&nbsp陆</button></div>
 	</form>
-	<div class="bottom">忘记密码</div>
+	<div class="bottom"><a href="" class="forget">忘记密码</a></div>
 	</div>
 </body>
 </html>
