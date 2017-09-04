@@ -10,6 +10,8 @@ body{
 	width: 3rem;
 	height: 2.9rem;
 	background-image: url("http://ovjmx1g1u.bkt.clouddn.com/17-8-31/15271258.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .title{
 	float: left;
@@ -22,6 +24,8 @@ body{
 	width: 9.7rem;
 	height: 4.4rem;
 	background-image: url("http://ovjmx1g1u.bkt.clouddn.com/17-8-31/35132631.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .intro{
 	text-align: left;
@@ -44,12 +48,16 @@ body{
 	height: 4.3rem;
 	margin:auto;
 	background-image: url("http://ovjmx1g1u.bkt.clouddn.com/17-8-31/56965024.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .icon2{
 	width: 4.7rem;
 	height: 4.3rem;
 	margin:auto;
 	background-image: url("http://ovjmx1g1u.bkt.clouddn.com/17-8-31/43867136.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 p{text-align: left;}
 @media only screen and (min-width:1000px){
@@ -60,6 +68,8 @@ p{text-align: center;}
 	width: 5.9rem;
 	height: 5.7rem;
 	background-image: url("http://ovjmx1g1u.bkt.clouddn.com/17-8-31/4265805.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .logo{
 	position: relative;
@@ -67,17 +77,23 @@ p{text-align: center;}
 	width: 19rem;
 	height: 7.5rem;
 	background-image: url("http://ovjmx1g1u.bkt.clouddn.com/17-8-31/10430447.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .icon1{
 	width: 8.6rem;
 	height: 8.6rem;
 	margin:auto;
 	background-image: url("http://ovjmx1g1u.bkt.clouddn.com/17-8-31/91837601.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .icon2{
 	width: 9.3rem;
 	height: 8.5rem;
 	margin:auto;
 	background-image: url("http://ovjmx1g1u.bkt.clouddn.com/17-8-31/58103184.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 }
