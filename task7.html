@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=disabled">
+	<script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+	<link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+	<script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+	<title>task7</title>
+	<style type="text/css">
+		html, body {
+			margin: 0;
+			font-size: 62.5%;
+			background-color: #f0f0f0;
+		}
+		.header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 5rem;
+			margin: 0;
+			padding-left: 1.725rem;
+			background-color: #29bde0;
+		}
+		.icon1 {
+			display: inline-block;
+			margin-top: 1.725rem;
+			width: 1.725rem;
+			height: 1.5rem;
+			background-image: url(images/7.1.0.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.search {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 5rem;
+			margin: 7rem 2rem 2rem;
+			padding: 0;
+			font-size: 1.5rem;
+			color: #9a9a9a;
+			background-color: #fff;
+		}
+		.icon2 {
+			position: absolute;
+			right: 1rem;
+			width: 1.3rem;
+			height: 2rem;
+			background-image: url(images/7.1.2.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.game-version {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			margin: 2rem;
+			color: #9a9a9a;
+			background-color: #fff;
+		}
+		.game {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width:100%;
+			height: 4rem;
+			font-size: 1.7rem;
+			color: #fbb435;
+			border-bottom: 1px solid #fbb435;
+		}
+		.version {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 6rem;
+			margin: 1.4rem 3rem;
+			font-size: 1.5rem;
+			color: #fff;
+			background-color: #29bde0;
+		}
+		.intro {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.2rem;
+		}
+		.dots {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 1.4rem;
+		}
+		.dot {
+			width: 1rem;
+			height: 1rem;
+			background-color: #f0f0f0;
+			border-radius: .5rem;
+			  margin-top: .5rem;
+			margin-right: .5rem; 
+		}
+		.dots>.dot1 {
+			margin-left: .5rem;
+			background-color: #29bde0;
+		}
+		.icon3 {
+			position: absolute;
+			top: 50%;
+			right: .5rem;
+			width: 1.4rem;
+			height: 2.8rem;
+			margin-top: -1.6rem;
+			background-image: url(images/7.1.1.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<dir class="header"><a href="#" class="icon icon1"></a></dir>
+	<dir class="search">上次游戏：捉鬼猜词版<a href="#" class="icon icon2"></a></dir>
+	<div class="game-version">
+		<span class="game">捉鬼游戏</span>
+		<a href="#" class="version">简化版</a>
+		<span class="intro">有1133个用户正在玩此款游戏</span>
+		<a href="#" class="version">猜词版</a>
+		<span class="intro">有1133个用户正在玩此款游戏</span>
+		<a href="#" class="version">白痴版</a>
+		<span class="intro">有1133个用户正在玩此款游戏</span>
+		<span class="dots">
+			<span class="dot dot1"></span>
+			<span class="dot dot2"></span>
+			<span class="dot dot3"></span>
+			<span class="dot dot4"></span>
+		</span>
+		<a href="#" class="icon icon3"></a>
+	</div>
+</body>
+</html>
