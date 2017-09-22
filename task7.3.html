@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=disabled">
+	<script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+	<link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+	<script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+	<title>task7.3</title>
+	<style type="text/css">
+		html,body {
+			margin: 0;
+			font-size: 62.5%;
+			background-color: #29c7e0;
+		}
+		.header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100vw;
+			height: 5rem;
+			padding: 0 2rem;
+			border-bottom: .1rem solid #74d4eb;
+			background-color: #29c7e0;
+		}
+		h1 {
+			font-size: 1.7rem;
+			color: #fff;
+		}
+		.icon1 {
+			width: 2.5rem;
+			height: 2rem;
+			 background-image: url(images/7.3.1.png);
+			  background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.icon2 {
+			width: 2rem;
+			height: 2rem;
+			margin-left: .5rem;
+			 background-image: url(images/7.3.2.png);
+			  background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.bg-img {
+			width: 32rem;
+			min-width: 32rem;
+			height: 12.3rem;
+			margin: 5rem auto 0;
+			 background-image: url(images/7.3.3.png);
+			  background-size: cover;
+			background-repeat: no-repeat;
+		}
+		p {line-height: 1rem;}
+		.congratulations {
+			width: 100vw;
+			padding: 0 4rem 0 4.5rem;
+			font-size: 1.7rem;
+			color: #ffc965;
+		}
+		.summary {
+			width: 100vw;
+			padding: 2.5rem 4rem 0 4.5rem;
+			font-size: 1.3rem;
+			color: #fff;
+		}
+		.null {
+			position: relative;
+			z-index: -1;
+		}
+		.statements {
+			width: 100vw;
+			color: #a6a6a6;
+			font-size: 1.3rem;
+			background-color: #fff;
+		}
+		.statements div {
+			padding: .5rem 4rem .5rem 4.5rem;
+			border-top: .1rem solid #d2d2d2;
+		}
+		.statements span {
+			float: right;
+			font-size: 1rem;
+			color: #d2d2d2;
+		}
+		.day1>p:nth-child(2n+1) {
+			margin-bottom: 1.5rem;
+		}
+		.day1>p:first-child {
+			font-size: 1.6rem;
+			color: #000;
+		}
+		.day2>p:nth-child(2n+1) {
+			margin-bottom: 1.5rem;
+		}
+		.day2>p:first-child {
+			font-size: 1.6rem;
+			color: #000;
+		}
+		.day3>p:nth-child(2n+1) {
+			margin-bottom: 1.5rem;
+		}
+		.day3>p:first-child {
+			font-size: 1.6rem;
+			color: #000;
+		}
+		.footer-bg {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100vw;
+			height: 5rem;
+			background-color: #99dff0;
+			      filter: alpha(Opacity=50);
+			-moz-opacity: .5;
+			     opacity: .5;			
+		}
+		.footer {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100vw;
+			height: 5rem;
+		}
+		.btn {
+			width: 1rem;
+			flex: auto;
+			margin: 0 2rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<a class="icon icon1" href="#"></a><h1>游戏结果</h1><a class="icon icon2" href="#"></a>
+	</div>
+	<div class="bg-img"></div>
+	<div class="congratulations">太棒了!你知道么？在捉鬼游戏中只有20%的卧底取得游戏最终的胜利哦！</div>
+	<div class="summary">
+		<p>本次游戏共计用时0小时25分钟 </p>
+		<p>杀<span class="null">空</span>手0人<span class="null">空</span><span class="null">空</span>警<span class="null">空</span>察1人<span class="null">空</span><span class="null">空</span>平<span class="null">空</span>民6人</p>
+		<p>狙击手0人<span class="null">空</span><span class="null">空</span>医<span class="null">空</span>生1人</p>
+		<p>卧底词汇：爱新觉罗</p>
+		<p>水民词汇：努尔哈赤 </p>
+	</div>
+	<div class="statements">
+		<div class="day1">
+			<p>第1天<span>0小时07分</span></p>
+			<p>晚上：5号被杀手杀死，5号是水民</p>
+			<p>白天：8号被全民投票投死，8号是杀手</p>
+		</div>
+		<div class="day2">
+			<p>第2天<span>0小时07分</span></p>
+			<p>晚上：5号被杀手杀死，5号是水民</p>
+			<p>白天：8号被全民投票投死，8号是杀手</p>
+		</div>
+		<div class="day3">
+			<p>第3天<span>0小时07分</span></p>
+			<p>晚上：5号被杀手杀死，5号是水民</p>
+			<p>白天：8号被全民投票投死，8号是杀手</p>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+		</div>
+	</div>
+	<div class="footer-bg"></div>
+	<div class="footer">
+		<button class="btn btn-danger">再来一局</button>
+		<button class="btn btn-warning">上传并分享</button>
+	</div>
+</body>
+</html>
