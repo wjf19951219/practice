@@ -28,19 +28,21 @@
 			color: #fff;
 			background-color: #25bde0;
 		}
+		.icon {
+			background-image: url(http://freestyleofchina.oss-cn-beijing.aliyuncs.com/images/task7.png);
+			background-repeat: no-repeat;
+		}
 		.icon1 {
 			width: 2rem;
 			height: 2rem;
-			background-image: url(images/7.2.1.png);
-			background-size: cover;
-			background-repeat: no-repeat;
+			background-position: -10px -83px;
+			zoom: 0.5;
 		}
 		.icon2 {
 			width: 2rem;
 			height: 2rem;
-			background-image: url(images/7.2.2.png);
-			background-size: cover;
-			background-repeat: no-repeat;
+			background-position: -10px -144px;
+			zoom: calc(2/3.8);
 		}
 		.guide {
 			position: fixed;
@@ -61,14 +63,11 @@
 		.icon3 {
 			width: 2.5rem;
 			height: 2.5rem;
-			background-image: url(images/7.2.7.png);
-			background-size: cover;
-			background-repeat: no-repeat;
+			background-position: -10px -10px;
+			zoom: calc(2.5/5.3);
 		}
 		.music {
-			      filter: alpha(Opacity=0);
-			-moz-opacity: 0;
-			     opacity: 0;
+			opacity: 0;
 			z-index: 9;
 		}
 		.arrow {
@@ -172,32 +171,28 @@
 			margin: .2rem 0 0 -.2rem;
 		}
 		.icon4 {
-			width: 5vw;
-			height: 5vw;
-			background-image: url(images/7.2.3.png);
-			background-size: cover;
-			background-repeat: no-repeat;
+			width: 1.6rem;
+			height: 1.6rem;
+			background-position: -248px -112px;
+			zoom: calc(32*.05 / 3.1);
 		}
 		.icon5 {
-			width: 5vw;
-			height: 5vw;
-			background-image: url(images/7.2.4.png);
-			background-size: cover;
-			background-repeat: no-repeat;
+			width: 1.6rem;
+			height: 1.6rem;
+			background-position: -248px -10px;
+			zoom: calc(32*.05 / 3.1);
 		}
 		.icon6 {
-			width: 5vw;
-			height: 5vw;
-			background-image: url(images/7.2.5.png);
-			background-size: cover;
-			background-repeat: no-repeat;
+			width: 1.6rem;
+			height: 1.6rem;
+			background-position: -10px -202px;
+			zoom: calc(32*.05 / 3.1);
 		}
 		.icon7 {
-			width: 5vw;
-			height: 5vw;
-			background-image: url(images/7.2.6.png);
-			background-size: cover;
-			background-repeat: no-repeat;
+			width: 1.6rem;
+			height: 1.6rem;
+			background-position: -248px -61px;
+			zoom: calc(32*.05 / 3.1);
 		}
 	</style>
 </head>
@@ -209,7 +204,7 @@
 	</div>
 	<dir class="guide">
 		<span>发言讨论结束，大家请投票</span>
-		<span class="icon icon3"><audio class="music" src="audio/horse.ogg" controls="controls">您的浏览器不支持audio标签</audio></span>
+		<span class="icon icon3"><audio class="music" src="http://freestyleofchina.oss-cn-beijing.aliyuncs.com/audio/horse.ogg" controls="controls">您的浏览器不支持audio标签</audio></span>
 	</dir>
 	<div class="arrow"></div>
 	<div class="guide-ps">点击投票数最多人的头像</div>
