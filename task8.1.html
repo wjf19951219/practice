@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=disabled">
+	<script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+	<link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+	<script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+	<title>task8.1</title>
+	<style type="text/css">
+		html, body {
+			margin: 0;
+			font-size: 62.5%;
+			background-color: #fafafa;
+		}
+		.header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 14rem;
+			z-index: 1;
+		}
+		p {margin: 0;}
+		.icon {
+			background-image: url(http://freestyleofchina.oss-cn-beijing.aliyuncs.com/images/task8.1.png);
+			background-repeat: no-repeat;
+		}
+		.header>div:first-child {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 4rem;
+			width: 100vw;
+			padding: 0 calc(360vw/19);
+			font-size: 1.3rem;
+			color: #29b078;
+			background-color: #fff;
+		}
+		.header>div:first-child>div {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 11rem;
+			height: 4rem;
+		}
+		.icon1 {
+			width: 2.9rem;
+			height: 3rem;
+			background-position: -158px -475px;
+		}
+		.icon2 {
+			width: 2.9rem;
+			height: 3rem;
+			background-position: -636px -390px;
+		}
+		.icon3 {
+			width: 3rem;
+			height: 3rem;
+			background-position: -433px -323px;
+		}
+		.header>div:last-child {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			height: 10rem;
+			width: 100vw;
+			padding: 0 calc(360vw/19 - 3rem);
+			background-color: #29b078;
+		}
+		.header>div:last-child>a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 10rem;
+			height: 10rem;
+			font-size: 1.5rem;
+			color: #fff;
+			box-sizing: border-box;
+		}
+		.header>div:last-child>a:hover {text-decoration: none;}
+		.header>div:last-child>a:active {border-bottom: 4px solid #fff;}
+		#carousel-example-generic {
+			margin-top: 14rem;
+			width: 100%;
+			box-sizing: border-box;
+			height: 40rem;
+			background-image: url(http://freestyleofchina.oss-cn-beijing.aliyuncs.com/images/task8.1.0.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.carousel-inner {
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			height: 40rem;
+		}
+		.item {
+			width: 58vw;
+			margin-top: 15rem;
+			text-align: right;
+			color: #fff;
+			font-weight: bolder;
+		}
+		.item>p:first-child {font-size: 3rem;}
+		.item>p:last-child {font-size: 4rem;}
+		.salary {font-size: 5rem;}
+		.carousel-control {background: none!important;}
+		.right {right: 10%!important;}
+		.left {left: 10%!important;}
+		.intro {
+			margin-top: 10rem;
+			padding: 0 calc(360vw/19);
+		}
+		.intro>div {
+			display: flex;
+			justify-content: space-between;
+		}
+		.intro>div>span {
+			width: calc(350vw/19);
+		}
+		.intro>div:nth-last-child(n+2)>span {
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+		}
+		.icon4 {
+			width: 4.4rem;
+			height: 6.3rem;
+			background-position: -138px -538px;
+		}
+		.icon5 {
+			width: 6.1rem;
+			height: 5rem;
+			background-position: -531px -314px;
+		}
+		.icon6 {
+			width: 5.2rem;
+			height: 5.5rem;
+			background-position: -564px -390px;
+		}
+		.icon7 {
+			display: inline-block;
+			width: 1.3rem;
+			height: 1.3rem;
+			background-position: -483px -323px;		
+		}
+		.intro>div:nth-child(2) {
+			align-items: baseline;
+			margin: 3rem 0;
+			font-size: 1.4rem;
+			font-weight: bolder;
+		}
+		.intro>div:nth-child(2)>span {padding: 0 2rem;}
+		.intro>div:nth-child(2)>span:last-child {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-top: -3rem;
+		}
+		.number {color: #29b078;}
+		.total {
+			color: #a1a1a1;
+			font-weight: normal;
+		}
+		.intro>div:nth-child(2) .number{
+			position: absolute;
+			top: -3rem;
+		}
+		.intro>div:nth-child(3) {
+			font-size: 1.3rem;
+			color: #a1a1a1;;
+		}
+		.intro>div:nth-child(3)>span {padding: 0 2rem;}
+		.intro>div:nth-child(3)>span:last-child {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			padding-left: 2rem;
+			font-size: 1.4rem;
+			line-height: 2rem;
+		}
+		.intro>div:nth-child(3)>span:last-child>.number {font-weight: bolder;}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div>
+			<p>客服热线：010-594-78634</p>
+			<div>
+				<span class="icon icon1"></span>
+				<span class="icon icon2"></span>
+				<span class="icon icon3"></span>
+			</div>
+		</div>
+		<div>
+			<a href="">首页</a>
+			<a href="">职业</a>
+			<a href="">推荐</a>
+			<a href="">关于</a>
+		</div>
+	</div>
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    	<ol class="carousel-indicators">
+    		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  		</ol>
+  		<div class="carousel-inner" role="listbox">
+   			<div class="item active">
+      			<p>作为你一个初级菜鸟，你是否想要了解</p>
+      			<p><span class="salary">50万</span>年薪的程序员，都会哪些技能呢？</p>
+    		</div>
+    		<div class="item">
+            	<p>作为你一个初级菜鸟，你是否想要了解</p>
+      			<p><span class="salary">60万</span>年薪的程序员，都会哪些技能呢？</p>
+
+    		</div>
+    		<div class="item">
+            	<p>作为你一个初级菜鸟，你是否想要了解</p>
+      			<p><span class="salary">70万</span>年薪的程序员，都会哪些技能呢？</p>
+
+    		</div>
+  		</div>
+ 		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		</a>
+  		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  		</a>
+	</div>
+	<div class="intro">
+		<div>
+			<span><span class="icon icon4"></span></span>
+			<span><span class="icon icon5"></span></span>
+			<span><span class="icon icon6"></span></span>
+			<span></span>
+		</div>
+		<div>
+			<span>高效</span>
+			<span>规范</span>
+			<span>人脉</span>
+			<span>
+				<span class="number"><span class="icon icon7"></span>&nbsp;12400</span>
+				<span class="total">累计在线学习人数</span>
+			</span>
+		</div>
+		<div>
+			<span>将五到七年的成长时间，缩短到一年到三年。</span>
+			<span>标准的实战教程，不会走弯路</span>
+			<span>同班好友，同院学长，技术大师,入学就混入职脉圈，为以后铺平道路。</span>
+			<span>
+				<span class="number"><span class="icon icon7"></span>&nbsp;12400</span>
+				<span class="total">学员已经找到满意工作</span>
+			</span>
+		</div>
+	</div>
+</body>
+</html>
