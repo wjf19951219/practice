@@ -19,7 +19,7 @@
 			left: 0;
 			width: 100vw;
 			height: 14rem;
-			z-index: 1;
+			z-index: 1111;
 		}
 		p {margin: 0;}
 		.icon {
@@ -78,8 +78,14 @@
 			color: #fff;
 			box-sizing: border-box;
 		}
-		.header>div:last-child>a:hover {text-decoration: none;}
-		.header>div:last-child>a:active {border-bottom: 4px solid #fff;}
+		.header>div:last-child>a:focus {
+			border-bottom: 4px solid #fff;
+			text-decoration: none;
+		}
+		.header>div:last-child>a:hover {
+			border-bottom: 4px solid #fff;
+			text-decoration: none;
+		}
 		#carousel-example-generic {
 			margin-top: 14rem;
 			width: 100%;
@@ -171,7 +177,8 @@
 		}
 		.intro>div:nth-child(3) {
 			font-size: 1.3rem;
-			color: #a1a1a1;;
+			line-height: 2.5rem;
+			color: #a1a1a1;
 		}
 		.intro>div:nth-child(3)>span {padding: 0 2rem;}
 		.intro>div:nth-child(3)>span:last-child {
@@ -181,9 +188,222 @@
 			align-items: flex-start;
 			padding-left: 2rem;
 			font-size: 1.4rem;
-			line-height: 2rem;
+			line-height: 3rem;
 		}
 		.intro>div:nth-child(3)>span:last-child>.number {font-weight: bolder;}
+		.measure {
+			margin-top: 10rem;
+			padding: 0 calc(360vw/19);
+			font-size: 1rem;
+			color: #999;
+		}
+		h3 {
+			margin-bottom: 5rem;
+			  font-size: 1.4rem;
+			font-weight: bolder;
+			color: #000;
+			text-align: center;
+		}
+		.steps {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			align-content: space-between;
+		}
+		.steps>span {margin-bottom: 6rem;}
+		.icon9 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 6rem;
+			height: 6rem;
+			font-size: calc(1.4rem*7.6/6);
+			color:  #29b078;
+			background-position: -433px -228px;
+			zoom: calc(6/7.6);
+		}
+		.icon8 {
+			width: 1.6rem;
+			height: 1.5rem;
+			margin: 0 1rem;
+			background-position: -612px -314px;
+			zoom: .5;
+		}
+		.details {
+			width: 12%;
+			text-align: left;
+			font-weight: bolder;
+		}
+		.show {
+			margin: 0 calc(360vw/19);
+			color: #999;
+		}
+		.show>div {
+			display: flex;
+			justify-content: space-between;
+			font-size: 1.3rem;
+		}
+		.show>div>div {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 22%;
+			background-color: #fff;
+			padding: 0 1.5rem 2rem;
+		}
+		.show>div>div>span:nth-child(2) {
+			margin: 2rem 0;
+			font-weight: bolder;
+			color: #000;
+		}
+		.icon10 {
+			margin-left: 1rem;
+			width: 6.4rem;
+			height: 6.4rem;
+			background-position: -531px -166px;
+			zoom: .5;
+		}
+		.icon11 {
+			margin-left: 1rem;
+			width: 7rem;
+			height: 6.8rem;
+			background-position: -531px -10px;
+			zoom: .5;
+		}
+		.icon12 {
+			margin-left: 1rem;
+			margin-top: 1rem;
+			width: 5.4rem;
+			height: 5.4rem;
+			background-position: -10px -538px;
+			zoom: .5;
+		}
+		.icon13 {
+			margin-left: 1rem;
+			width: 7.3rem;
+			height: 7rem;
+			background-position: -267px -228px;
+			zoom: .5;
+		}
+		.dots {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.dots>span {
+			width: 1rem;
+			height: 1rem;
+			border-radius: .5rem;
+			margin: 1.5rem .2rem 6rem;
+			background-color: #fff;
+			border: .1px solid #f0f0f0;
+			box-shadow: 60;
+		}
+		.dots>span:focus {background-color: #29b078;}
+		.dots>span:hover {background-color: #29b078;}
+		.dots>span:first-child {background-color: #29b078;}
+		.company {
+			display: flex;
+			margin: 0 calc(360vw/19);
+		}
+		.company>span {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 20%;
+			height: 15rem;
+			background-color: #fff;
+		}
+		.icon14 {
+			width: calc(21.8rem*0.7);
+			height: calc(18.4rem*0.7);
+			background-position: -293px -10px;
+			zoom: .7;
+		}
+		.icon15 {
+			width: calc(23.7rem*0.7);
+			height: calc(14.2rem*0.7);
+			background-position: -10px -228px;
+			zoom: .7;
+		}
+		.icon16 {
+			margin-left: -2rem;
+			width: calc(26.3rem*0.7);
+			height: calc(19.8rem*0.7);
+			background-position: -10px -10px;
+			zoom: .7;
+		}
+		.icon17 {
+			width: calc(19.1rem*0.7);
+			height: calc(6.5rem*0.7);
+			background-position: -158px -390px;
+			zoom: .7;
+		}
+		.icon18 {
+			width: calc(17.5rem*0.7);
+			height: calc(6.5rem*0.7);
+			background-position: -369px -390px;
+			zoom: .7;
+		}
+		.multi-link {
+			margin-top: 7rem;
+			padding: .5rem calc(360vw/19) 0;
+			background-color: #fff;
+		}
+		.multi-link>div {
+			display: flex;
+			justify-content: space-between;
+			align-content: center;
+			margin-top: -2rem;
+			padding: 0 2rem 2rem 1.2rem;
+			font-size: 1rem;
+			color: #999;
+		}
+		ul, li {
+			white-space: nowrap;
+			margin: 0;
+			padding: 0;
+			line-height: 2rem;
+		}
+		.footer {
+			position: relative;
+			padding: 3rem calc(360vw/19) 0rem;
+			font-size: 1.3rem;
+			line-height: 4rem;
+			color: #fff;
+			background-color: #29b078;
+		}
+		.text-left {position: absolute;}
+		.text-right {margin-left: 30%;}
+		.footer .websites {
+			padding-bottom: .3rem;
+			margin-right: 3rem;
+			font-size: 1.2rem;
+			color: #fff;
+		}
+		.websites:hover {text-decoration: none;}
+		.websites:active {
+			border-bottom: 1px solid #fff;
+		}
+		.copy-right {
+			display: inline-block;
+			margin-top: 3rem;
+			font-size: 1rem;
+		}
+		.code {
+			position: absolute;
+			top: calc(50% - 12.8rem*.6); 
+			right: calc(360vw/19 + 2rem);
+
+		}
+		.icon19 {
+			display: inline-block;
+			width: calc(12.8rem*.6);
+			height: calc(12.8rem*.6);
+			background-position: -10px -390px;
+			zoom: .6;
+		}
 	</style>
 </head>
 <body>
@@ -191,16 +411,16 @@
 		<div>
 			<p>客服热线：010-594-78634</p>
 			<div>
-				<span class="icon icon1"></span>
-				<span class="icon icon2"></span>
-				<span class="icon icon3"></span>
+				<a href="" class="icon icon1"></a>
+				<a href="" class="icon icon2"></a>
+				<a href="" class="icon icon3"></a>
 			</div>
 		</div>
 		<div>
-			<a href="">首页</a>
-			<a href="">职业</a>
-			<a href="">推荐</a>
-			<a href="">关于</a>
+			<a href="#">首页</a>
+			<a href="#">职业</a>
+			<a href="#">推荐</a>
+			<a href="#">关于</a>
 		</div>
 	</div>
 	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -256,6 +476,145 @@
 				<span class="number"><span class="icon icon7"></span>&nbsp;12400</span>
 				<span class="total">学员已经找到满意工作</span>
 			</span>
+		</div>
+	</div>
+	<div class="measure">
+		<h3>如何学习</h3>
+		<div class="steps">
+			<span class="icon icon9">1</span><span class="details">匹配你现在的个人情况寻找适合自己的岗位</span><span class="icon icon8"></span>
+			<span class="icon icon9"><span>2</span></span><span class="details">了解职业前景薪金待遇、竞争压力等</span><span class="icon icon8"></span>
+			<span class="icon icon9"><span>3</span></span><span class="details">掌握行业内顶级技能</span><span class="icon icon8"></span>
+			<span class="icon icon9"><span>4</span></span><span class="details">查看职业目标任务</span>
+			<span class="icon icon9"><span>5</span></span><span class="details">参考学习资源，掌握技能点，逐个完成任务</span><span class="icon icon8"></span>
+			<span class="icon icon9"><span>6</span></span><span class="details">加入班级，和小伙伴们互帮互助，一块学习</span><span class="icon icon8"></span>
+			<span class="icon icon9"><span>7</span></span><span class="details">选择导师，一路引导，加速自己成长</span><span class="icon icon8"></span>
+			<span class="icon icon9"><span>8</span></span><span class="details">完成职业技能，升级业界大牛</span>
+		</div>
+	</div>
+	<div class="show">
+		<h3>优秀学员展示</h3>
+		<div class="person">
+			<div>
+				<span class="icon icon10"></span>
+				<span>技术顾问：罗大佑</span>
+				<span>百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研 发、团队管理与建设。</span>
+			</div>
+			<div>
+				<span class="icon icon11"></span>
+				<span>技术顾问：罗大佑</span>
+				<span>百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研 发、团队管理与建设。</span>
+			</div>
+			<div>
+				<span class="icon icon12"></span>
+				<span>技术顾问：罗大佑</span>
+				<span>百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研 发、团队管理与建设。</span>
+			</div>
+			<div>
+				<span class="icon icon13"></span>
+				<span>技术顾问：罗大佑</span>
+				<span>百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研 发、团队管理与建设。</span>
+			</div>
+		</div>
+	</div>
+	<div class="dots">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<div>
+		<h3>战略合作企业</h3>
+		<div class="company">
+			<span><a href="" class="icon icon14"></a></span>
+			<span><a href="" class="icon icon15"></a></span>
+			<span><a href="" class="icon icon16"></a></span>
+			<span><a href="" class="icon icon17"></a></span>
+			<span><a href="" class="icon icon18"></a></span>
+		</div>
+	</div>
+	<div class="multi-link">
+		<h3>友情链接</h3>
+		<div>
+		<span>
+			<ul>
+				<li>手机软件</li>
+				<li>手机软件</li>
+			</ul>
+		</span>
+		<span>
+			<ul>
+				<li>教师招聘</li>
+				<li>教师招聘</li>
+			</ul>
+		</span>
+		<span>
+			<ul>
+				<li>找工作</li>
+				<li>找工作</li>
+			</ul>
+		</span>
+		<span>
+			<ul>
+				<li>教师招聘</li>
+				<li>教师招聘</li>
+			</ul>
+		</span>
+		<span>
+			<ul>
+				<li>找工作</li>
+				<li>找工作</li>
+			</ul>
+		</span>
+		<span>
+			<ul>
+				<li>手机软件</li>
+				<li>手机软件</li>
+			</ul>
+		</span>
+		<span>
+			<ul>
+				<li>教师招聘</li>
+				<li>教师招聘</li>
+			</ul>
+		</span>
+		<span>
+			<ul>
+				<li>手机软件</li>
+				<li>手机软件</li>
+			</ul>
+		</span>
+		<span>
+			<ul>
+				<li>手机软件</li>
+				<li>手机软件</li>
+			</ul>
+		</span>
+		<span>
+			<ul>
+				<li>找工作</li>
+				<li>找工作</li>
+			</ul>
+		</span>
+		</div>
+	</div>
+	<div class="footer">
+		<div>
+			<span class="text-left">技能树 — 改变你我</span>
+			<span class="text-right">旗下网站</span>
+		</div>
+		<div>
+			<a href="" class="text-right websites">草船云孵化器</a>
+			<a href="" class="websites">最强IT特训营</a>
+		</div>
+		<div>
+			<span class="text-left">关于我们  |  联系我们  |  合作企业</span>
+			<a href=""  class="text-right websites">葡萄藤轻游戏</a>
+			<a href="" class="websites">桌游精灵</a>
+		</div>
+		<span class="text-right copy-right">Copyright © 2015技能树 www.jnshu.com  All Rights Reserved | 京ICP</span>
+		<div class="code">
+			<p>微信公众平台</p>
+			<span class="icon icon19"></span>
 		</div>
 	</div>
 </body>
