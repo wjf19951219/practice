@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<script src="https://freestyleofchina.oss-cn-beijing.aliyuncs.com/bootstrap/jquery/jquery.min.js"></script>
+	<link href="https://freestyleofchina.oss-cn-beijing.aliyuncs.com/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://freestyleofchina.oss-cn-beijing.aliyuncs.com/bootstrap/bootstrap3.3.6/bootstrap.min.js"></script>
+	<title>task8.2</title>
+	<style type="text/css">
+		html, body {
+			margin: 0;
+			font-size: 62.5%;
+			min-width: 1000px;
+			overflow: auto;
+			background-color: #fafafa;
+		}
+		.header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 14rem;
+			z-index: 1111;
+		}
+		p {margin: 0;}
+		.icon {
+			background-image: url(https://freestyleofchina.oss-cn-beijing.aliyuncs.com/images/task8.1.png);
+			background-repeat: no-repeat;
+		}
+		.header>div:first-child {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 4rem;
+			width: 100vw;
+			padding: 0 calc(360vw/19);
+			font-size: 1.3rem;
+			color: #29b078;
+			background-color: #fff;
+		}
+		.header>div:first-child>div {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 11rem;
+			height: 4rem;
+		}
+		.icon1 {
+			width: 2.9rem;
+			height: 3rem;
+			background-position: -158px -475px;
+		}
+		.icon2 {
+			width: 2.9rem;
+			height: 3rem;
+			background-position: -636px -390px;
+		}
+		.icon3 {
+			width: 3rem;
+			height: 3rem;
+			background-position: -433px -323px;
+		}
+		.header>div:last-child {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			height: 10rem;
+			width: 100vw;
+			padding: 0 calc(360vw/19 - 3rem);
+			background-color: #29b078;
+		}
+		.header>div:last-child>a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 10rem;
+			height: 10rem;
+			font-size: 1.5rem;
+			color: #fff;
+			box-sizing: border-box;
+		}
+		.header>div:last-child>a:focus {
+			border-bottom: 4px solid #fff;
+			text-decoration: none;
+		}
+		.header>div:last-child>a:hover {
+			border-bottom: 4px solid #fff;
+			text-decoration: none;
+		}
+		.icon4 {
+			position: absolute;
+			left: calc(360vw/19 - 1rem);
+			width: 12.5rem;
+			height: 5.7rem;
+			background-image: url(https://freestyleofchina.oss-cn-beijing.aliyuncs.com/images/task8.2.1.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.pic {
+			position: relative;
+			padding-left: calc(360vw/19);
+			margin-top: 14rem;
+			height: 18rem;
+			background-color: #f1a750;
+		}
+		.icon5 {
+			position: absolute;
+			bottom: 0;
+			width: calc(106.7rem*.7);
+			height: calc(24.6rem*.7);
+			background-image: url(https://freestyleofchina.oss-cn-beijing.aliyuncs.com/images/task8.2.2.1.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.breadcrumb {
+			display: inline-block;
+			margin: 2rem auto 2rem calc(360vw/19);
+			padding-left: 0;
+			font-size: 1.5rem;
+			background: none;
+		}
+		.breadcrumb a {color: #29b078;}
+		.company {
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			padding: 0 calc(360vw/19 - 1rem) 0 calc(360vw/19);
+			margin: 0;
+		}
+		.name {
+			width: 20rem;
+			background-color: #fff;
+			margin-right: 5rem;
+		}
+		.name>div:first-child {
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+			padding-left: 7.5rem;
+			font-size: 1.5rem;
+			border-bottom: 1px solid #e9e9e9;
+		}
+		.name>div:last-child {
+			padding-top: 2rem;
+			padding-left: 7rem;
+			font-size: 1.3rem;
+		}
+		.btn {
+			padding: 0;
+			margin: 0;
+			border: none;
+		}
+		.btn:focus,
+		.btn:hover,
+		.btn:active:focus,
+		.btn:active {
+			text-decoration: none;
+			color: #ff946b;
+			background: none;
+			box-shadow: none;
+			outline: none;
+		}
+		.btn:focus .icon6,
+		.btn:hover .icon6,
+		.btn:active .icon6{background-color: #ff946b;}
+		.btn:focus .opt,
+		.btn:active .opt {
+			display: block;
+			z-index: 1;
+			outline: none;
+		}
+		.option {
+			display: flex;
+			align-items: center;
+			margin-bottom: 2rem;
+			color: #29b078;
+		}
+		.icon6 {
+			width: .8rem;
+			height: .8rem;
+			margin-right: .2rem;
+			border-radius: .4em;
+			border: 1px solid #ff946b;
+		}
+		.opt {
+			position: absolute;
+			top: 0;
+			right: calc(360vw/19 - 3rem);
+			left: calc(360vw/19 + 23rem);
+			display: none;
+			width: auto;
+			height: 114rem;
+			font-size: 1.3rem;
+			line-height: 2.5rem;
+			color: #a9a9a9;
+			background-color:#fff;
+		}
+		.opt>div:first-child {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 2rem 4rem;
+			width: auto;
+			white-space: pre-wrap;
+			text-align: left;
+			border-bottom: 1px solid #e9e9e9;
+		}
+		.icon7 {
+			width: 13.4rem;
+			height: 3.9rem;
+			background-image: url(https://freestyleofchina.oss-cn-beijing.aliyuncs.com/images/task8.2.4.png);
+		}
+		.opt>div:first-child>span:last-child {width: 25rem;}
+		.opt>div:last-child {padding: 0 5rem 10rem;}
+		.company p {
+			margin: 2em 0;
+			white-space: pre-wrap;
+			text-align: left;
+		}
+		.blank {
+			opacity: 0;
+			z-index: -1;
+		}
+		.intro {
+			position: absolute;
+			top: 0;
+			right: calc(360vw/19 - 3rem);
+			left: calc(360vw/19 + 23rem);			
+			width: auto;
+			height: 114rem;
+			padding: 2rem 5rem;
+			font-size: 1.3rem;
+			text-align: center;
+			line-height: 2.5rem;
+			color: #f00;
+			background-color:#fff;
+		}
+		.footer {
+			position: relative;
+			padding: 3rem calc(360vw/19) 0rem;
+			font-size: 1.3rem;
+			line-height: 4rem;
+			margin-top: 70rem;
+			color: #fff;
+			background-color: #29b078;
+		}
+		.text-left {position: absolute;}
+		.text-right {margin-left: 30%;}
+		.footer .websites {
+			padding-bottom: .3rem;
+			margin-right: 3rem;
+			font-size: 1.2rem;
+			color: #fff;
+		}
+		.websites:hover {text-decoration: none;}
+		.websites:active {
+			border-bottom: 1px solid #fff;
+		}
+		.copy-right {
+			display: inline-block;
+			margin-top: 3rem;
+			font-size: 1rem;
+		}
+		.code {
+			position: absolute;
+			top: calc(50% - 12.8rem*.6); 
+			right: calc(360vw/19 + 2rem);
+
+		}
+		.icon19 {
+			display: inline-block;
+			width: calc(12.8rem*.6);
+			height: calc(12.8rem*.6);
+			background-position: -10px -390px;
+			zoom: .6;
+		}
+		</style>
+</head>
+<body>
+	<div class="header">
+		<div>
+			<p>客服热线：010-594-78634</p>
+			<div>
+				<a href="" class="icon icon1"></a>
+				<a href="" class="icon icon2"></a>
+				<a href="" class="icon icon3"></a>
+			</div>
+		</div>
+		<div>
+			<span class="icon4"></span>
+			<a href="#">首页</a>
+			<a href="#">职业</a>
+			<a href="#">推荐</a>
+			<a href="#">关于</a>
+		</div>
+	</div>
+	<div class="pic"><span class="icon5"></span></div>
+	<ol class="breadcrumb">
+  		<li class="active">首页</li>
+  		<li><a href="#">合作企业</a></li>
+	</ol>
+	<div class="company">
+		<div class="name">
+			<div>合作企业</div>
+			<div>
+				<div tabindex="0" class="option btn">
+					<span class="icon6"></span>阿里巴巴
+					<div class="opt">此页暂无内容</div>
+				</div>
+				<div tabindex="0" class="option btn">
+					<span class="icon6"></span>腾讯视频
+					<div class="opt">此页暂无内容</div>
+				</div>
+				<div tabindex="0" class="option btn">
+					<span class="icon6"></span>土豆网
+					<div class="opt">
+						<div>
+							<span class="icon7"></span>
+							<span>土豆是阿里巴巴文化娱乐集团旗下短视频平台，以“只要时刻有趣着”为口号，号召全球有趣短视频。由阿里巴巴文化娱乐集团移动事业群总裁何小鹏兼任总裁，以成为“全球第一短视频平台”为目标，全力进击PUGC领域。</span>
+						</div>
+						<div>
+							<p><span class="blank">空格</span>土豆是中国最早和最具影响力的网络视频平台，是中国网络视频行业的领军品牌。其前身土豆网于2005年4月15日正式上线，是全球最早上线的视频网站之一。2014年1月，“土豆网”正式更名为“土豆”，标志着土豆进入品牌发展的新阶段。</p>
+							<p><span class="blank">空格</span>“每个人都是生活的导演”是土豆从创立第一天始的价值观。土豆相信年轻人的想象力、创造力，相信土豆的平台能帮助年轻人创造出更多，更好的影像作品，来表达对自己、生活和这个时代的看法。同时，土豆提倡尊重“每个人”的个性，尊重每个人自主地选择自己的生活，成为自己成长的导演。</p>
+							<p><span class="blank">空格</span>2012年3月12日，优酷股份有限公司(NYSE: YOKU) (“优酷”) 和土豆股份有限公司 (NASDAQ: TUDO) (“土豆”)共同宣布，优酷和土豆将以100%换股的方式合并。2012年8月20日，优酷土豆合并方案获双方股东大会高票批准通过，优酷土豆集团公司正式诞生。2013年4月，优酷土豆集团宣布进入“集团BU化”运营阶段，提出“优酷更优酷，土豆更土豆”的发展战略。</p>
+							<p><span class="blank">空格</span>2013年2月，杨伟东成为土豆总裁，宣布打造土豆“成为中国年轻人最喜爱的视频网站”，并明确土豆“成为中国最具影响力的青年文化品牌”的愿景，确立了土豆“青春、个性、自主、有趣”的品牌定位，土豆全面进入2.0阶段。通过年轻化的内容、年轻化的产品技术和年轻化的UGC/	PGC生态三个方面来全面推动土豆2.0战略。</p>
+							<p><span class="blank">空格</span>2014年3月土豆推出“4+1”战略。其中“4”代表的是土豆在内容方面更专注动漫、音乐、韩国娱乐、时尚四个垂直文化领域。而“1”则代表土豆推出的“一个频道”战略，基于“频道主”和“订阅者”两个视角全方位架构跨屏和线上线下体验系统，并结合用户体验、商业模式、运营机制等环节，提出了5个“一”规划。</p>
+							<p><span class="blank">空格</span>根据第三方调研公司艾瑞的数据，优酷土豆集团在PC端和移动端全平台各项数据持续占据视频行业绝对领先优势，截止2014年3月，土豆每月独立访问用户数量增长到2.43亿。 2013年土豆在移动端的增长也非常迅猛，2013年三季度，土豆移动端获得了高速增长，月均覆盖用户较当年3月增长11倍，平均增长率超过40%；月均视频播放量增长23倍，月平均增幅达60%。</p>
+						</div>
+					</div>
+				</div>
+				<div tabindex="0" class="option btn">
+					<span class="icon6"></span>北京葡萄藤
+					<div class="opt">此页暂无内容</div>
+				</div>
+				<div tabindex="0" class="option btn">
+					<span class="icon6"></span>阿里巴巴
+					<div class="opt">此页暂无内容</div>
+				</div>
+				<div tabindex="0" class="option btn">
+					<span class="icon6"></span>腾讯视频
+					<div class="opt">此页暂无内容</div>
+				</div>
+				<div tabindex="0" class="option btn">
+					<span class="icon6"></span>土豆网
+					<div class="opt">
+						<div>
+							<span class="icon7"></span>
+							<span>土豆是阿里巴巴文化娱乐集团旗下短视频平台，以“只要时刻有趣着”为口号，号召全球有趣短视频。由阿里巴巴文化娱乐集团移动事业群总裁何小鹏兼任总裁，以成为“全球第一短视频平台”为目标，全力进击PUGC领域。</span>
+						</div>
+						<div>
+							<p><span class="blank">空格</span>土豆是中国最早和最具影响力的网络视频平台，是中国网络视频行业的领军品牌。其前身土豆网于2005年4月15日正式上线，是全球最早上线的视频网站之一。2014年1月，“土豆网”正式更名为“土豆”，标志着土豆进入品牌发展的新阶段。</p>
+							<p><span class="blank">空格</span>“每个人都是生活的导演”是土豆从创立第一天始的价值观。土豆相信年轻人的想象力、创造力，相信土豆的平台能帮助年轻人创造出更多，更好的影像作品，来表达对自己、生活和这个时代的看法。同时，土豆提倡尊重“每个人”的个性，尊重每个人自主地选择自己的生活，成为自己成长的导演。</p>
+							<p><span class="blank">空格</span>2012年3月12日，优酷股份有限公司(NYSE: YOKU) (“优酷”) 和土豆股份有限公司 (NASDAQ: TUDO) (“土豆”)共同宣布，优酷和土豆将以100%换股的方式合并。2012年8月20日，优酷土豆合并方案获双方股东大会高票批准通过，优酷土豆集团公司正式诞生。2013年4月，优酷土豆集团宣布进入“集团BU化”运营阶段，提出“优酷更优酷，土豆更土豆”的发展战略。</p>
+							<p><span class="blank">空格</span>2013年2月，杨伟东成为土豆总裁，宣布打造土豆“成为中国年轻人最喜爱的视频网站”，并明确土豆“成为中国最具影响力的青年文化品牌”的愿景，确立了土豆“青春、个性、自主、有趣”的品牌定位，土豆全面进入2.0阶段。通过年轻化的内容、年轻化的产品技术和年轻化的UGC/	PGC生态三个方面来全面推动土豆2.0战略。</p>
+							<p><span class="blank">空格</span>2014年3月土豆推出“4+1”战略。其中“4”代表的是土豆在内容方面更专注动漫、音乐、韩国娱乐、时尚四个垂直文化领域。而“1”则代表土豆推出的“一个频道”战略，基于“频道主”和“订阅者”两个视角全方位架构跨屏和线上线下体验系统，并结合用户体验、商业模式、运营机制等环节，提出了5个“一”规划。</p>
+							<p><span class="blank">空格</span>根据第三方调研公司艾瑞的数据，优酷土豆集团在PC端和移动端全平台各项数据持续占据视频行业绝对领先优势，截止2014年3月，土豆每月独立访问用户数量增长到2.43亿。 2013年土豆在移动端的增长也非常迅猛，2013年三季度，土豆移动端获得了高速增长，月均覆盖用户较当年3月增长11倍，平均增长率超过40%；月均视频播放量增长23倍，月平均增幅达60%。</p>
+						</div>
+					</div>
+				</div>
+				<div tabindex="0" class="option btn">
+					<span class="icon6"></span>北京葡萄藤
+					<div class="opt">此页暂无内容</div>
+				</div>
+				<div tabindex="0" class="option btn">
+					<span class="icon6"></span>阿里巴巴
+					<div class="opt">此页暂无内容</div>
+				</div>
+				<div tabindex="0" class="option btn">
+					<span class="icon6"></span>腾讯视频
+					<div class="opt">此页暂无内容</div>
+				</div>
+				<div tabindex="0" class="option btn">
+					<span class="icon6"></span>土豆网
+					<div class="opt">
+						<div>
+							<span class="icon7"></span>
+							<span>土豆是阿里巴巴文化娱乐集团旗下短视频平台，以“只要时刻有趣着”为口号，号召全球有趣短视频。由阿里巴巴文化娱乐集团移动事业群总裁何小鹏兼任总裁，以成为“全球第一短视频平台”为目标，全力进击PUGC领域。</span>
+						</div>
+						<div>
+							<p><span class="blank">空格</span>土豆是中国最早和最具影响力的网络视频平台，是中国网络视频行业的领军品牌。其前身土豆网于2005年4月15日正式上线，是全球最早上线的视频网站之一。2014年1月，“土豆网”正式更名为“土豆”，标志着土豆进入品牌发展的新阶段。</p>
+							<p><span class="blank">空格</span>“每个人都是生活的导演”是土豆从创立第一天始的价值观。土豆相信年轻人的想象力、创造力，相信土豆的平台能帮助年轻人创造出更多，更好的影像作品，来表达对自己、生活和这个时代的看法。同时，土豆提倡尊重“每个人”的个性，尊重每个人自主地选择自己的生活，成为自己成长的导演。</p>
+							<p><span class="blank">空格</span>2012年3月12日，优酷股份有限公司(NYSE: YOKU) (“优酷”) 和土豆股份有限公司 (NASDAQ: TUDO) (“土豆”)共同宣布，优酷和土豆将以100%换股的方式合并。2012年8月20日，优酷土豆合并方案获双方股东大会高票批准通过，优酷土豆集团公司正式诞生。2013年4月，优酷土豆集团宣布进入“集团BU化”运营阶段，提出“优酷更优酷，土豆更土豆”的发展战略。</p>
+							<p><span class="blank">空格</span>2013年2月，杨伟东成为土豆总裁，宣布打造土豆“成为中国年轻人最喜爱的视频网站”，并明确土豆“成为中国最具影响力的青年文化品牌”的愿景，确立了土豆“青春、个性、自主、有趣”的品牌定位，土豆全面进入2.0阶段。通过年轻化的内容、年轻化的产品技术和年轻化的UGC/	PGC生态三个方面来全面推动土豆2.0战略。</p>
+							<p><span class="blank">空格</span>2014年3月土豆推出“4+1”战略。其中“4”代表的是土豆在内容方面更专注动漫、音乐、韩国娱乐、时尚四个垂直文化领域。而“1”则代表土豆推出的“一个频道”战略，基于“频道主”和“订阅者”两个视角全方位架构跨屏和线上线下体验系统，并结合用户体验、商业模式、运营机制等环节，提出了5个“一”规划。</p>
+							<p><span class="blank">空格</span>根据第三方调研公司艾瑞的数据，优酷土豆集团在PC端和移动端全平台各项数据持续占据视频行业绝对领先优势，截止2014年3月，土豆每月独立访问用户数量增长到2.43亿。 2013年土豆在移动端的增长也非常迅猛，2013年三季度，土豆移动端获得了高速增长，月均覆盖用户较当年3月增长11倍，平均增长率超过40%；月均视频播放量增长23倍，月平均增幅达60%。</p>
+						</div>
+					</div>
+				</div>
+				<div tabindex="0" class="option btn">
+					<span class="icon6"></span>北京葡萄藤
+					<div class="opt">此页暂无内容</div>
+				</div>
+			</div>
+		</div>
+		<div class="intro">
+			<span><strong>请选择合作企业!</strong></span>
+			<p><span class="blank">空格</span>中国特色社会主义，亦称“有中国特色社会主义”。包括中国特色社会主义道路和中国特色社会主义理论体系。中国特色社会主义道路，即指中国共产党领导中国人民实行改革开放伟大革命实践开辟的一条中国式的现代化道路;中国特色社会主义理论体系，即指中国共产党把马克思主义与中国实际相结合实现马克思主义中国化的最新理论成果。科学社会主义的基本原则与中国实际相结合的产物，具有鲜明的时代特征和中国特色</p>
+			<p><span class="blank">空格</span>中国特色社会主义道路，就是在中国共产党领导下，立足基本国情，以经济建设为中心，坚持四项基本原则，坚持改革开放，解放和发展社会生产力，建设特色社会主义市场经济、社会主义民主政治、社会主义先进文化、社会主义和谐社会、社会主义生态文明，促进人的全面发展，逐步实现全体人民共同富裕，建设富强民主文明和谐的社会主义现代化国家。建设有中国特色社会主义是由中国改革开放的总设计师邓小平提出的。</p>
+			<p><span class="blank">空格</span>中国特色社会主义理论体系，就是包括邓小平理论、“三个代表”重要思想以及科学发展观等重大战略思想在内的科学理论体系。</p>
+			<p><span class="blank"></span>从中国特色社会主义这一科学命题的提出，到中国特色社会主义道路的确立和发展, 党在改革开放和社会主义现代化建设过程中, 对中国特色社会主义道路内涵的认识逐步深化。在纪念毛泽东同志诞辰110周年座谈会上，胡锦涛同志对道路内涵作了表述。党的十八大报告，进一步阐述了中国特色社会主义道路的科学涵义。</p>
+			<p><span class="blank">空格</span>中国特色社会主义道路，是形成和发展中国特色社会主义理论体系、坚持和完善中国特色社会主义制度的重要途径。新中国成立初期，中国共产党领导中国人民取得了新民主主义革命的伟大胜利，建立了社会主义制度，并初步实践建设社会主义，为中国特色社会主义道路的形成奠定了坚实基础。党的十一届三中全会以来，中国共产党带领中国人民在总结前期探索的经验和教训的基础上，开辟了中国特色社会主义道路，形成了中国特色社会主义理论体系。正因为依托中国特色社会主义道路，所以形成和发展了中国特色社会主义理论体系。而确立中国特色社会主义制度，则从根本上改变了中国的历史命运。由于坚定不移地走中国特色社会主义道路，又在不断地促进社会主义制度的完善。由于紧紧依托中国特色社会主义道路，则更好地坚持和完善了社会主义制度。</p>
+		</div>
+	</div>
+	<div class="footer">
+		<div>
+			<span class="text-left">技能树 — 改变你我</span>
+			<span class="text-right">旗下网站</span>
+		</div>
+		<div>
+			<a href="" class="text-right websites">草船云孵化器</a>
+			<a href="" class="websites">最强IT特训营</a>
+		</div>
+		<div>
+			<span class="text-left">关于我们  |  联系我们  |  合作企业</span>
+			<a href=""  class="text-right websites">葡萄藤轻游戏</a>
+			<a href="" class="websites">桌游精灵</a>
+		</div>
+		<span class="text-right copy-right">Copyright © 2015技能树 www.jnshu.com  All Rights Reserved | 京ICP</span>
+		<div class="code">
+			<p>微信公众平台</p>
+			<span class="icon icon19"></span>
+		</div>
+	</div>
+</body>
+</html>
