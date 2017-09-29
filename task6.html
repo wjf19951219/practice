@@ -34,6 +34,7 @@
 			font-size: 1rem;
 		}
 		.header {
+			position: relative;
 			background-color: #fff;
 			height: 4rem;
 			border-radius: .5rem;
@@ -55,16 +56,19 @@
 			color: #5fc0cd;
 			outline:none;
 		}
+		.btn:active:focus,
+				   a:focus {outline: none;}
 		.icon {
 			display: inline-block;
-			width: 2.5rem;
-			height: 2.5rem;
+			width: 25px;
+			height: 25px;
 			background-image: url(http://ovjmx1g1u.bkt.clouddn.com/17-9-18/40699526.jpg);
 			background-repeat: no-repeat;
 		}
 		.icon1 {
 			position: absolute;
 			right: 1.5rem;
+			top: calc(50% - 1.25rem);
 		}
 		.container { padding: 0; }
 		.dropdown {
@@ -124,7 +128,12 @@
 			align-items: center;
 		}
 		.price>a {color: #dc143c;}
-		.menu {text-align: center;}
+		.menu {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+		}
 		.menu2 {
 			height: 4.7rem;
 			width: 4.7rem;
@@ -275,15 +284,13 @@
 		</tbody>
 	</table>
 	<nav class="navbar navbar-fixed-bottom container downmenu">
-		<div class="menu menu1 col-xs-4"><a href="#"><span class="icon icon2">
-			</span>
-			<br>
+		<div class="menu1 col-xs-4"><a class="menu" href="#">
+			<span class="icon icon2"></span>
 			<span>首页</span></a>
 		</div>
 		<a href="#" class="menu menu2 col-xs-4"><a href="#"></span></a>
-		<div class="menu menu3 col-xs-4"><a href="#"><span class="icon icon3">
-			</span>
-			<br>
+		<div class="menu menu3 col-xs-4"><a class="menu" href="#">
+			<span class="icon icon3"></span>
 			<span>我的</span></a>
 		</div>
 	</nav>
