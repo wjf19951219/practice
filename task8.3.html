@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,  maximum-scale=1.0, user-scalable=no">
+	<script src="https://freestyleofchina.oss-cn-beijing.aliyuncs.com/bootstrap/jquery/jquery.min.js"></script>
+	<link href="https://freestyleofchina.oss-cn-beijing.aliyuncs.com/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://freestyleofchina.oss-cn-beijing.aliyuncs.com/bootstrap/bootstrap3.3.6/bootstrap.min.js"></script>
+	<title>task8.3</title>
+	<style type="text/css">
+		html, body {
+			margin: 0;
+			font-size: 62.5%;
+			min-width: 1000px;
+			overflow: auto;
+			background-color: #fafafa;
+		}
+		.header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 14rem;
+			z-index: 1111;
+		}
+		p {margin: 0;}
+		.icon {
+			background-image: url(https://freestyleofchina.oss-cn-beijing.aliyuncs.com/images/task8.1.png);
+			background-repeat: no-repeat;
+		}
+		.header>div:first-child {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 4rem;
+			width: 100vw;
+			padding: 0 calc(360vw/19);
+			font-size: 1.3rem;
+			color: #29b078;
+			background-color: #fff;
+		}
+		.header>div:first-child>div {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 11rem;
+			height: 4rem;
+		}
+		.icon1 {
+			width: 2.9rem;
+			height: 3rem;
+			background-position: -158px -475px;
+		}
+		.icon2 {
+			width: 2.9rem;
+			height: 3rem;
+			background-position: -636px -390px;
+		}
+		.icon3 {
+			width: 3rem;
+			height: 3rem;
+			background-position: -433px -323px;
+		}
+		.header>div:last-child {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			height: 10rem;
+			width: 100vw;
+			padding: 0 calc(360vw/19 - 3rem);
+			background-color: #29b078;
+		}
+		.header>div:last-child>a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 10rem;
+			height: 10rem;
+			font-size: 1.5rem;
+			color: #fff;
+			box-sizing: border-box;
+		}
+		.header>div:last-child>a:focus {
+			border-bottom: 4px solid #fff;
+			text-decoration: none;
+		}
+		.header>div:last-child>a:hover {
+			border-bottom: 4px solid #fff;
+			text-decoration: none;
+		}
+		.icon4 {
+			position: absolute;
+			left: calc(360vw/19 - 1rem);
+			width: 12.5rem;
+			height: 5.7rem;
+			background-image: url(https://freestyleofchina.oss-cn-beijing.aliyuncs.com/images/task8.2.1.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.breadcrumb {
+			display: inline-block;
+			margin: 16rem auto 0 calc(360vw/19);
+			padding-left: 0;
+			font-size: 1.5rem;
+			background: none;
+		}
+		.breadcrumb a {color: #29b078;}
+		hr {width: calc(100vw - 2*360vw/19);}
+		.menu {
+			display: flex;
+			justify-content: flex-start;
+			margin-left: calc(360vw/19 - 1rem);
+		}
+		.menu>.btn {
+			margin-right: 2rem;
+			font-size: 1.3rem;
+			color: #000;
+			border-radius: .5rem!important;
+		}
+		.menu>.btn:first-child {color: #999;}
+		.menu>.btn:first-child.active,
+		.menu>.btn:first-child:focus,
+		.menu>.btn:first-child:hover,
+		.menu>.btn:first-child:active {
+			background-color: #fafafa;
+			color: #999!important;
+			outline: none;
+		}
+		.btn.active,
+		.menu>.btn:focus,
+		.menu>.btn:hover,
+		.menu>.btn:active {
+			color: #fff;
+			background-color: #29b078;
+			box-shadow: none;
+			outline: none;
+		}
+		.jobs {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			padding:0 calc(360vw/19);
+		}
+		.direction {padding:0 calc(360vw/19);}
+		p {font-size: 1.5rem;}
+		.jobs>div {
+			position: relative;
+			width: 32%;
+			margin-bottom: 2.5rem;
+			margin-top: 1rem;
+			margin-left: 2%;
+			background-color: #fff;
+			border: 1px solid #eee;
+			border-bottom: none;
+		}
+		.intro {
+			display: none!important;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			padding: 5rem 2rem;
+			color: #fff!important;
+			font-size: 1.2rem!important;
+			background-color: #000;
+			opacity: .7; 
+		}
+		.intro>div {
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+		.jobs>div:hover .intro{display: block!important;}
+		.jobs>div:nth-child(3n+1) {margin-left: 0;}
+		.jobs>div>div {
+			display: flex;
+			align-items: center;
+			font-size: .8rem;
+			line-height: 2rem;
+			color: #888;
+			border-bottom: 1px solid #eee;
+		}
+		.icon5 {
+			display: inline-block;
+			flex: none;
+			margin-right: .5rem;
+			width: 7rem;
+			height: 7rem;
+			background-image: url(https://freestyleofchina.oss-cn-beijing.aliyuncs.com/images/task8.3.1.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.jobs>div>.row1 {
+			padding: 1rem .5rem;
+			line-height: 1.5rem;
+			color: #000;
+		}
+		.row1>span:nth-child(2) {margin: 0;}
+		.row1>span:nth-child(2)>p {font-size: 1.3rem;}
+		.row1>span:nth-child(2)>span {font-size: .9rem;}
+		.row2>span {
+			display: flex;
+			align-items: center;
+			width: 1rem;
+			flex: 1;
+		}
+		.row2>span:first-child {
+			border-right: 1px solid #eee;
+			margin-right: 1rem;
+			padding-left: .5rem;
+		}
+		.icon6 {
+			display: inline-block;
+			width: .8rem;
+			height: .75rem;
+			margin-left: .5rem;
+			background-image: url(https://freestyleofchina.oss-cn-beijing.aliyuncs.com/images/task8.3.2.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.row3>span {
+			display: flex;
+			align-items: center;
+			width: 1rem;
+			flex: 1;
+		}
+		.row3>span:first-child {
+			border-right: 1px solid #eee;
+			margin-right: 1rem;
+			padding-left: .5rem;
+		}
+		.row3>span>span:nth-child(1) {
+			margin-left: .5rem;
+			color: #f00;
+		}
+		.row3>span>span:nth-child(2) {color: #000;}
+		.row4>span:first-child {
+			width: 40%;
+			text-align: center;
+			flex: none;
+		}
+		.row4>span:nth-child(2) {
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+			border-left: 1px solid #eee;
+		}
+		.row4>span:nth-child(2)>span {
+			display: flex;
+			justify-content: space-between;
+			padding-left: 1rem;
+			padding-right: .5rem;
+			color: #000;
+			border-bottom: 1px solid #eee;
+		}
+		.row4>span:nth-child(2)>span:last-child {border-bottom: none;}
+		.row5 {
+			color: #000!important;
+			padding-left: .5rem;
+		}
+		.row5>span {color: #f00;}
+		.row6 {
+			padding-left: .5rem;
+			padding-right: .5rem;
+		}
+		.footer {
+			position: relative;
+			padding: 3rem calc(360vw/19) 0rem;
+			font-size: 1.3rem;
+			line-height: 4rem;
+			margin-top: 20rem;
+			color: #fff;
+			background-color: #29b078;
+		}
+		.text-left {position: absolute;}
+		.text-right {margin-left: 30%;}
+		.footer .websites {
+			padding-bottom: .3rem;
+			margin-right: 3rem;
+			font-size: 1.2rem;
+			color: #fff;
+		}
+		.websites:hover {text-decoration: none;}
+		.websites:active {
+			border-bottom: 1px solid #fff;
+		}
+		.copy-right {
+			display: inline-block;
+			margin-top: 3rem;
+			font-size: 1rem;
+		}
+		.code {
+			position: absolute;
+			top: calc(50% - 12.8rem*.6); 
+			right: calc(360vw/19 + 2rem);
+
+		}
+		.icon19 {
+			display: inline-block;
+			width: calc(12.8rem*.6);
+			height: calc(12.8rem*.6);
+			background-position: -10px -390px;
+			zoom: .6;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div>
+			<p>客服热线：010-594-78634</p>
+			<div>
+				<a href="" class="icon icon1"></a>
+				<a href="" class="icon icon2"></a>
+				<a href="" class="icon icon3"></a>
+			</div>
+		</div>
+		<div>
+			<span class="icon4"></span>
+			<a href="#">首页</a>
+			<a href="#">职业</a>
+			<a href="#">推荐</a>
+			<a href="#">关于</a>
+		</div>
+	</div>
+	<ol class="breadcrumb">
+  		<li class="active">首页</li>
+  		<li><a href="#">职业</a></li>
+	</ol>
+	<hr>
+	<div class="btn-group menu" data-toggle="buttons">
+		<label class="btn disabled">
+    		<input type="radio" >方向：
+  		</label>
+  		<label class="btn active">
+    		<input type="radio" checked>全部
+  		</label>
+  		<label class="btn">
+   			<input type="radio" >前端开发
+ 	 	</label>
+  		<label class="btn">
+    		<input type="radio" >后端开发
+  		</label>
+  		<label class="btn">
+    		<input type="radio" >移动开发
+  		</label>
+  		<label class="btn">
+    		<input type="radio" >整站开发
+  		</label>
+  		<label class="btn">
+    		<input type="radio" >运营维护
+  		</label>
+	</div>
+	<hr>
+	<p class="direction">前端开发方向</p>
+	<hr>
+	<div class="jobs">
+		<div>
+			<div class="intro"><div>ios工程师</div>iphone工程师是移动应用开发者，希望将自己的应用移植到该iphone平台上或者在该平台上开发应用。主要分为：iPhone App研发工程师，iPhone App 测试工程师，iPhone App 产品策划等。</div>
+			<div class="row1">
+				<span class="icon5"></span>
+				<span>
+					<p>Web前端工程师</p>
+					<span>Web前端开发工程师，主要职责是利用(X)HTML/CSS/JavaScript/flash等各种Web技术进行产品的开发。</span>
+				</span>
+			</div>
+			<div class="row2">
+				<span>
+					<span>门槛</span>
+					<span class="icon6"></span>
+				</span>
+				<span>
+					<span>难易程度</span>
+					<span class="icon6"></span>
+					<span class="icon6"></span>
+				</span>
+			</div>
+			<div class="row3">
+				<span>成长周期<span>1-3</span><span>年</span></span>
+				<span>稀缺程度<span>345</span><span>家公司需要</span></span>
+			</div>
+			<div class="row4">
+				<span>薪资待遇</span>
+				<span>
+					<span><span>0-1年</span><span>5k-10k/月</span></span>
+					<span><span>1-3年</span><span>10k-20k/月</span></span>
+					<span><span>3-5年</span><span>20k-50k/月</span></span>
+				</span>
+			</div>
+			<div class="row5">有<span>286</span>人正在学</div>
+			<div class="row6">提示:在你学习之前你应该已经掌握XXXXX、XXXXX、XX等语言基础</div>
+		</div>
+		<div>
+			<div class="intro"><div>ios工程师</div>iphone工程师是移动应用开发者，希望将自己的应用移植到该iphone平台上或者在该平台上开发应用。主要分为：iPhone App研发工程师，iPhone App 测试工程师，iPhone App 产品策划等。</div>
+			<div class="row1">
+				<span class="icon5"></span>
+				<span>
+					<p>Web前端工程师</p>
+					<span>Web前端开发工程师，主要职责是利用(X)HTML/CSS/JavaScript/flash等各种Web技术进行产品的开发。</span>
+				</span>
+			</div>
+			<div class="row2">
+				<span>
+					<span>门槛</span>
+					<span class="icon6"></span>
+				</span>
+				<span>
+					<span>难易程度</span>
+					<span class="icon6"></span>
+					<span class="icon6"></span>
+				</span>
+			</div>
+			<div class="row3">
+				<span>成长周期<span>1-3</span><span>年</span></span>
+				<span>稀缺程度<span>345</span><span>家公司需要</span></span>
+			</div>
+			<div class="row4">
+				<span>薪资待遇</span>
+				<span>
+					<span><span>0-1年</span><span>5k-10k/月</span></span>
+					<span><span>1-3年</span><span>10k-20k/月</span></span>
+					<span><span>3-5年</span><span>20k-50k/月</span></span>
+				</span>
+			</div>
+			<div class="row5">有<span>286</span>人正在学</div>
+			<div class="row6">提示:在你学习之前你应该已经掌握XXXXX、XXXXX、XX等语言基础</div>
+		</div>
+		<div>
+			<div class="intro"><div>ios工程师</div>iphone工程师是移动应用开发者，希望将自己的应用移植到该iphone平台上或者在该平台上开发应用。主要分为：iPhone App研发工程师，iPhone App 测试工程师，iPhone App 产品策划等。</div>
+			<div class="row1">
+				<span class="icon5"></span>
+				<span>
+					<p>Web前端工程师</p>
+					<span>Web前端开发工程师，主要职责是利用(X)HTML/CSS/JavaScript/flash等各种Web技术进行产品的开发。</span>
+				</span>
+			</div>
+			<div class="row2">
+				<span>
+					<span>门槛</span>
+					<span class="icon6"></span>
+				</span>
+				<span>
+					<span>难易程度</span>
+					<span class="icon6"></span>
+					<span class="icon6"></span>
+				</span>
+			</div>
+			<div class="row3">
+				<span>成长周期<span>1-3</span><span>年</span></span>
+				<span>稀缺程度<span>345</span><span>家公司需要</span></span>
+			</div>
+			<div class="row4">
+				<span>薪资待遇</span>
+				<span>
+					<span><span>0-1年</span><span>5k-10k/月</span></span>
+					<span><span>1-3年</span><span>10k-20k/月</span></span>
+					<span><span>3-5年</span><span>20k-50k/月</span></span>
+				</span>
+			</div>
+			<div class="row5">有<span>286</span>人正在学</div>
+			<div class="row6">提示:在你学习之前你应该已经掌握XXXXX、XXXXX、XX等语言基础</div>
+		</div>
+	</div>
+	<p class="direction">后端开发方向</p>
+	<hr>
+	<div class="jobs">
+		<div>
+			<div class="intro"><div>ios工程师</div>iphone工程师是移动应用开发者，希望将自己的应用移植到该iphone平台上或者在该平台上开发应用。主要分为：iPhone App研发工程师，iPhone App 测试工程师，iPhone App 产品策划等。</div>
+			<div class="row1">
+				<span class="icon5"></span>
+				<span>
+					<p>Web前端工程师</p>
+					<span>Web前端开发工程师，主要职责是利用(X)HTML/CSS/JavaScript/flash等各种Web技术进行产品的开发。</span>
+				</span>
+			</div>
+			<div class="row2">
+				<span>
+					<span>门槛</span>
+					<span class="icon6"></span>
+				</span>
+				<span>
+					<span>难易程度</span>
+					<span class="icon6"></span>
+					<span class="icon6"></span>
+				</span>
+			</div>
+			<div class="row3">
+				<span>成长周期<span>1-3</span><span>年</span></span>
+				<span>稀缺程度<span>345</span><span>家公司需要</span></span>
+			</div>
+			<div class="row4">
+				<span>薪资待遇</span>
+				<span>
+					<span><span>0-1年</span><span>5k-10k/月</span></span>
+					<span><span>1-3年</span><span>10k-20k/月</span></span>
+					<span><span>3-5年</span><span>20k-50k/月</span></span>
+				</span>
+			</div>
+			<div class="row5">有<span>286</span>人正在学</div>
+			<div class="row6">提示:在你学习之前你应该已经掌握XXXXX、XXXXX、XX等语言基础</div>
+		</div>
+		<div>
+			<div class="intro"><div>ios工程师</div>iphone工程师是移动应用开发者，希望将自己的应用移植到该iphone平台上或者在该平台上开发应用。主要分为：iPhone App研发工程师，iPhone App 测试工程师，iPhone App 产品策划等。</div>
+			<div class="row1">
+				<span class="icon5"></span>
+				<span>
+					<p>Web前端工程师</p>
+					<span>Web前端开发工程师，主要职责是利用(X)HTML/CSS/JavaScript/flash等各种Web技术进行产品的开发。</span>
+				</span>
+			</div>
+			<div class="row2">
+				<span>
+					<span>门槛</span>
+					<span class="icon6"></span>
+				</span>
+				<span>
+					<span>难易程度</span>
+					<span class="icon6"></span>
+					<span class="icon6"></span>
+				</span>
+			</div>
+			<div class="row3">
+				<span>成长周期<span>1-3</span><span>年</span></span>
+				<span>稀缺程度<span>345</span><span>家公司需要</span></span>
+			</div>
+			<div class="row4">
+				<span>薪资待遇</span>
+				<span>
+					<span><span>0-1年</span><span>5k-10k/月</span></span>
+					<span><span>1-3年</span><span>10k-20k/月</span></span>
+					<span><span>3-5年</span><span>20k-50k/月</span></span>
+				</span>
+			</div>
+			<div class="row5">有<span>286</span>人正在学</div>
+			<div class="row6">提示:在你学习之前你应该已经掌握XXXXX、XXXXX、XX等语言基础</div>
+		</div>
+		<div>
+			<div class="intro"><div>ios工程师</div>iphone工程师是移动应用开发者，希望将自己的应用移植到该iphone平台上或者在该平台上开发应用。主要分为：iPhone App研发工程师，iPhone App 测试工程师，iPhone App 产品策划等。</div>
+			<div class="row1">
+				<span class="icon5"></span>
+				<span>
+					<p>Web前端工程师</p>
+					<span>Web前端开发工程师，主要职责是利用(X)HTML/CSS/JavaScript/flash等各种Web技术进行产品的开发。</span>
+				</span>
+			</div>
+			<div class="row2">
+				<span>
+					<span>门槛</span>
+					<span class="icon6"></span>
+				</span>
+				<span>
+					<span>难易程度</span>
+					<span class="icon6"></span>
+					<span class="icon6"></span>
+				</span>
+			</div>
+			<div class="row3">
+				<span>成长周期<span>1-3</span><span>年</span></span>
+				<span>稀缺程度<span>345</span><span>家公司需要</span></span>
+			</div>
+			<div class="row4">
+				<span>薪资待遇</span>
+				<span>
+					<span><span>0-1年</span><span>5k-10k/月</span></span>
+					<span><span>1-3年</span><span>10k-20k/月</span></span>
+					<span><span>3-5年</span><span>20k-50k/月</span></span>
+				</span>
+			</div>
+			<div class="row5">有<span>286</span>人正在学</div>
+			<div class="row6">提示:在你学习之前你应该已经掌握XXXXX、XXXXX、XX等语言基础</div>
+		</div>
+		<div>
+			<div class="intro"><div>ios工程师</div>iphone工程师是移动应用开发者，希望将自己的应用移植到该iphone平台上或者在该平台上开发应用。主要分为：iPhone App研发工程师，iPhone App 测试工程师，iPhone App 产品策划等。</div>
+			<div class="row1">
+				<span class="icon5"></span>
+				<span>
+					<p>Web前端工程师</p>
+					<span>Web前端开发工程师，主要职责是利用(X)HTML/CSS/JavaScript/flash等各种Web技术进行产品的开发。</span>
+				</span>
+			</div>
+			<div class="row2">
+				<span>
+					<span>门槛</span>
+					<span class="icon6"></span>
+				</span>
+				<span>
+					<span>难易程度</span>
+					<span class="icon6"></span>
+					<span class="icon6"></span>
+				</span>
+			</div>
+			<div class="row3">
+				<span>成长周期<span>1-3</span><span>年</span></span>
+				<span>稀缺程度<span>345</span><span>家公司需要</span></span>
+			</div>
+			<div class="row4">
+				<span>薪资待遇</span>
+				<span>
+					<span><span>0-1年</span><span>5k-10k/月</span></span>
+					<span><span>1-3年</span><span>10k-20k/月</span></span>
+					<span><span>3-5年</span><span>20k-50k/月</span></span>
+				</span>
+			</div>
+			<div class="row5">有<span>286</span>人正在学</div>
+			<div class="row6">提示:在你学习之前你应该已经掌握XXXXX、XXXXX、XX等语言基础</div>
+		</div>
+		<div>
+			<div class="intro"><div>ios工程师</div>iphone工程师是移动应用开发者，希望将自己的应用移植到该iphone平台上或者在该平台上开发应用。主要分为：iPhone App研发工程师，iPhone App 测试工程师，iPhone App 产品策划等。</div>
+			<div class="row1">
+				<span class="icon5"></span>
+				<span>
+					<p>Web前端工程师</p>
+					<span>Web前端开发工程师，主要职责是利用(X)HTML/CSS/JavaScript/flash等各种Web技术进行产品的开发。</span>
+				</span>
+			</div>
+			<div class="row2">
+				<span>
+					<span>门槛</span>
+					<span class="icon6"></span>
+				</span>
+				<span>
+					<span>难易程度</span>
+					<span class="icon6"></span>
+					<span class="icon6"></span>
+				</span>
+			</div>
+			<div class="row3">
+				<span>成长周期<span>1-3</span><span>年</span></span>
+				<span>稀缺程度<span>345</span><span>家公司需要</span></span>
+			</div>
+			<div class="row4">
+				<span>薪资待遇</span>
+				<span>
+					<span><span>0-1年</span><span>5k-10k/月</span></span>
+					<span><span>1-3年</span><span>10k-20k/月</span></span>
+					<span><span>3-5年</span><span>20k-50k/月</span></span>
+				</span>
+			</div>
+			<div class="row5">有<span>286</span>人正在学</div>
+			<div class="row6">提示:在你学习之前你应该已经掌握XXXXX、XXXXX、XX等语言基础</div>
+		</div>
+	</div>
+	<p class="direction">运维方向</p>
+	<hr>
+	<div class="jobs">
+		<div>
+			<div class="intro"><div>ios工程师</div>iphone工程师是移动应用开发者，希望将自己的应用移植到该iphone平台上或者在该平台上开发应用。主要分为：iPhone App研发工程师，iPhone App 测试工程师，iPhone App 产品策划等。</div>
+			<div class="row1">
+				<span class="icon5"></span>
+				<span>
+					<p>Web前端工程师</p>
+					<span>Web前端开发工程师，主要职责是利用(X)HTML/CSS/JavaScript/flash等各种Web技术进行产品的开发。</span>
+				</span>
+			</div>
+			<div class="row2">
+				<span>
+					<span>门槛</span>
+					<span class="icon6"></span>
+				</span>
+				<span>
+					<span>难易程度</span>
+					<span class="icon6"></span>
+					<span class="icon6"></span>
+				</span>
+			</div>
+			<div class="row3">
+				<span>成长周期<span>1-3</span><span>年</span></span>
+				<span>稀缺程度<span>345</span><span>家公司需要</span></span>
+			</div>
+			<div class="row4">
+				<span>薪资待遇</span>
+				<span>
+					<span><span>0-1年</span><span>5k-10k/月</span></span>
+					<span><span>1-3年</span><span>10k-20k/月</span></span>
+					<span><span>3-5年</span><span>20k-50k/月</span></span>
+				</span>
+			</div>
+			<div class="row5">有<span>286</span>人正在学</div>
+			<div class="row6">提示:在你学习之前你应该已经掌握XXXXX、XXXXX、XX等语言基础</div>
+		</div>
+		<div>
+			<div class="intro"><div>ios工程师</div>iphone工程师是移动应用开发者，希望将自己的应用移植到该iphone平台上或者在该平台上开发应用。主要分为：iPhone App研发工程师，iPhone App 测试工程师，iPhone App 产品策划等。</div>
+			<div class="row1">
+				<span class="icon5"></span>
+				<span>
+					<p>Web前端工程师</p>
+					<span>Web前端开发工程师，主要职责是利用(X)HTML/CSS/JavaScript/flash等各种Web技术进行产品的开发。</span>
+				</span>
+			</div>
+			<div class="row2">
+				<span>
+					<span>门槛</span>
+					<span class="icon6"></span>
+				</span>
+				<span>
+					<span>难易程度</span>
+					<span class="icon6"></span>
+					<span class="icon6"></span>
+				</span>
+			</div>
+			<div class="row3">
+				<span>成长周期<span>1-3</span><span>年</span></span>
+				<span>稀缺程度<span>345</span><span>家公司需要</span></span>
+			</div>
+			<div class="row4">
+				<span>薪资待遇</span>
+				<span>
+					<span><span>0-1年</span><span>5k-10k/月</span></span>
+					<span><span>1-3年</span><span>10k-20k/月</span></span>
+					<span><span>3-5年</span><span>20k-50k/月</span></span>
+				</span>
+			</div>
+			<div class="row5">有<span>286</span>人正在学</div>
+			<div class="row6">提示:在你学习之前你应该已经掌握XXXXX、XXXXX、XX等语言基础</div>
+		</div>
+		<div>
+			<div class="intro"><div>ios工程师</div>iphone工程师是移动应用开发者，希望将自己的应用移植到该iphone平台上或者在该平台上开发应用。主要分为：iPhone App研发工程师，iPhone App 测试工程师，iPhone App 产品策划等。</div>
+			<div class="row1">
+				<span class="icon5"></span>
+				<span>
+					<p>Web前端工程师</p>
+					<span>Web前端开发工程师，主要职责是利用(X)HTML/CSS/JavaScript/flash等各种Web技术进行产品的开发。</span>
+				</span>
+			</div>
+			<div class="row2">
+				<span>
+					<span>门槛</span>
+					<span class="icon6"></span>
+				</span>
+				<span>
+					<span>难易程度</span>
+					<span class="icon6"></span>
+					<span class="icon6"></span>
+				</span>
+			</div>
+			<div class="row3">
+				<span>成长周期<span>1-3</span><span>年</span></span>
+				<span>稀缺程度<span>345</span><span>家公司需要</span></span>
+			</div>
+			<div class="row4">
+				<span>薪资待遇</span>
+				<span>
+					<span><span>0-1年</span><span>5k-10k/月</span></span>
+					<span><span>1-3年</span><span>10k-20k/月</span></span>
+					<span><span>3-5年</span><span>20k-50k/月</span></span>
+				</span>
+			</div>
+			<div class="row5">有<span>286</span>人正在学</div>
+			<div class="row6">提示:在你学习之前你应该已经掌握XXXXX、XXXXX、XX等语言基础</div>
+		</div>
+	</div>
+	<p class="direction">运维方向</p>
+	<hr>
+	<div class="jobs">
+		<div>
+			<div class="intro"><div>ios工程师</div>iphone工程师是移动应用开发者，希望将自己的应用移植到该iphone平台上或者在该平台上开发应用。主要分为：iPhone App研发工程师，iPhone App 测试工程师，iPhone App 产品策划等。</div>
+			<div class="row1">
+				<span class="icon5"></span>
+				<span>
+					<p>Web前端工程师</p>
+					<span>Web前端开发工程师，主要职责是利用(X)HTML/CSS/JavaScript/flash等各种Web技术进行产品的开发。</span>
+				</span>
+			</div>
+			<div class="row2">
+				<span>
+					<span>门槛</span>
+					<span class="icon6"></span>
+				</span>
+				<span>
+					<span>难易程度</span>
+					<span class="icon6"></span>
+					<span class="icon6"></span>
+				</span>
+			</div>
+			<div class="row3">
+				<span>成长周期<span>1-3</span><span>年</span></span>
+				<span>稀缺程度<span>345</span><span>家公司需要</span></span>
+			</div>
+			<div class="row4">
+				<span>薪资待遇</span>
+				<span>
+					<span><span>0-1年</span><span>5k-10k/月</span></span>
+					<span><span>1-3年</span><span>10k-20k/月</span></span>
+					<span><span>3-5年</span><span>20k-50k/月</span></span>
+				</span>
+			</div>
+			<div class="row5">有<span>286</span>人正在学</div>
+			<div class="row6">提示:在你学习之前你应该已经掌握XXXXX、XXXXX、XX等语言基础</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div>
+			<span class="text-left">技能树 — 改变你我</span>
+			<span class="text-right">旗下网站</span>
+		</div>
+		<div>
+			<a href="" class="text-right websites">草船云孵化器</a>
+			<a href="" class="websites">最强IT特训营</a>
+		</div>
+		<div>
+			<span class="text-left">关于我们  |  联系我们  |  合作企业</span>
+			<a href=""  class="text-right websites">葡萄藤轻游戏</a>
+			<a href="" class="websites">桌游精灵</a>
+		</div>
+		<span class="text-right copy-right">Copyright © 2015技能树 www.jnshu.com  All Rights Reserved | 京ICP</span>
+		<div class="code">
+			<div>微信公众平台</div>
+			<span class="icon icon19"></span>
+		</div>
+	</div>
+</body>
+</html>
